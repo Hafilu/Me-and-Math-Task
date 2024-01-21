@@ -28,13 +28,27 @@ const port = process.env.PORT || 8080;
 app.use('/api', router) /** apis */
 
 
-app.get('/', (req, res) => {
-    try {
-        res.json("Get Request")
-    } catch (error) {
-        res.json(error)
-    }
-})
+
+// --------------------------deployment------------------------------
+
+const __dirname1 = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "/client/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"))
+  );
+} else {
+    app.get('/', (req, res) => {
+        try {
+            res.json("Get Request")
+        } catch (error) {
+            res.json(error)
+        }
+    })
+    
+}
 
 
 /** start server only when we have valid connection */
