@@ -30,19 +30,7 @@ app.use('/api', router) /** apis */
 
 
 
-// --------------------------deployment------------------------------
-
-const __dirname1 = path.resolve();
-const parentDir = path.join(__dirname1, '..');
  
- 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(parentDir, "/client/build")));
-
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(parentDir, "client", "build", "index.html"))
-  );
-} else {
     app.get('/', (req, res) => {
         try {
             res.json("Get Request")
@@ -51,7 +39,7 @@ if (process.env.NODE_ENV === "production") {
         }
     })
     
-}
+ 
 
 
 
