@@ -1,0 +1,49 @@
+.container-main{
+display: block;
+  position: relative;
+  margin: 40px auto;
+  height: auto;
+  width: 800px;
+  padding: 20px;
+}
+
+.container-main ol li{
+    font-size: 1.4em;
+    color: #cecece;
+}
+
+.start{
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+.btn{
+    padding: .2em 1.7em;
+    border: none;
+    border-radius: .1em;
+    font-size: 1.2em;
+    color: #202020;
+    text-decoration: none;
+    background-color: #0DFF92;
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+}
+
+#form .userid{
+    padding: .7em 2em;
+    width: 50%;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+.message{
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
