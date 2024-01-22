@@ -29,7 +29,7 @@ export function CheckUserExist({ children }) {
     useEffect(() => {
       const fetchUsers = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/api/user');
+          const response = await axios.get('https://quiz-app-tan8.onrender.com/api/user');
           const usersData = response.data;
   
           // Check if the userId matches any registration number
