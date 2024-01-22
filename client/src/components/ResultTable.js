@@ -10,7 +10,7 @@ export default function ResultTable() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getServerData('http://localhost:5000/api/result', (res) => {
+    getServerData('https://quiz-app-tan8.onrender.com/api/result', (res) => {
       // Sort data based on points in descending order
       const sortedData = res.sort((a, b) => b.points - a.points);
       setData(sortedData);
