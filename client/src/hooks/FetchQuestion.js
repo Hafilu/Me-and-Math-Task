@@ -18,7 +18,7 @@ export const useFetchQestion = () => {
         /** async function fetch backend data */
         (async () => {
             try {
-                const [{ questions, answers }] = await getServerData("http://localhost:5000/api/questions", (data) => data)
+                const [{ questions, answers }] = await getServerData("https://quiz-app-tan8.onrender.com/api/questions", (data) => data)
                 console.log("fetch q",questions);
                 if(questions.length > 0){
                     setGetData(prev => ({...prev, isLoading : false}));
